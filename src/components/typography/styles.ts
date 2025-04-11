@@ -31,6 +31,17 @@ export const styles: StylesProps = {
     fontWeight: 400,
     color: theme.secondary,
   },
+  description2: {
+    fontSize: "1rem",
+    fontWeight: 700,
+    color: theme.secondary,
+  },
 };
 
-export type Variant = "h1" | "h2" | "title1" | "title2" | "description";
+export type Variant =
+  | "h1"
+  | "h2"
+  | "title1"
+  | "title2"
+  | "description"
+  | "description2";

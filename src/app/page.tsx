@@ -1,14 +1,16 @@
-import Typography from "@/components/typography";
+"use client";
+import { HomeSection, SubscribeSection } from "@/components";
+import ForYouSection from "@/components/sections/for-you-section";
+import MissionSection from "@/components/sections/mission-section";
 import React from "react";
 
 const Home = () => {
   return (
     <>
-      <Typography variant="h1">hola</Typography>
-      <Typography variant="h2">hola</Typography>
-      <Typography variant="title1">hola</Typography>
-      <Typography variant="title2">hola</Typography>
-      <Typography variant="description">hola</Typography>
+      <HomeSection id="home-section" />
+      <ForYouSection id="for-you-section" />
+      <SubscribeSection id="subscribe-section" />
+      <MissionSection id="mission-section" />
     </>
   );
 };

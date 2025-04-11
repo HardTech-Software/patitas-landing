@@ -1,4 +1,9 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: inherit;
+}
+
+body {
+  background-color: #fef7f7;
 }

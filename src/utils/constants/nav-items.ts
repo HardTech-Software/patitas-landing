@@ -1,6 +1,9 @@
+export const headerHeight = 80;
+
 export const navItems = [
   { label: "HOME", sectionId: "home-section" },
-  { label: "QUE HAY PARA TI", sectionId: "section2" },
-  { label: "NUESTRA MOTIVACIÓN", sectionId: "section3" },
-  { label: "CONTACTO", sectionId: "footer" },
+  { label: "QUE HAY PARA TI", sectionId: "for-you-section" },
+  { label: "SUSCRíBETE Y AYUDA", sectionId: "subscribe-section" },
+  { label: "NUESTRA MOTIVACIÓN", sectionId: "mission-section" },
+  { label: "CONTACTO", sectionId: "footer-section" },
 ];
