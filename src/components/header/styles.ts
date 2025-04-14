@@ -49,6 +49,7 @@ export const Item = styled.div`
   cursor: pointer;
   padding: 25px;
   transition: background-color 0.3s ease;
+  text-align: center;
 
   &:hover {
     background-color: ${theme.primary};

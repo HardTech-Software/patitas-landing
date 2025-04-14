@@ -10,3 +10,4 @@ export { default as SubscribeSection } from "./sections/subscribe-section";
 export { default as MissionSection } from "./sections/mission-section";
 export { default as Footer } from "./footer";
 export { default as Title } from "./title";
+export { default as IconButton } from "./icon-button";

@@ -6,6 +6,7 @@ export const styles: StylesProps = {
     fontSize: "3rem",
     fontWeight: 700,
     color: theme.secondary,
+    lineHeight: 1,
   },
 
   h2: {
