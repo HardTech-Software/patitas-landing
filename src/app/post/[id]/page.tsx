@@ -3,7 +3,6 @@ import type { Metadata, ResolvingMetadata } from "next";
 
 type Props = {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export async function generateMetadata(
@@ -18,13 +17,19 @@ export async function generateMetadata(
     {
       cache: "no-store",
     },
-  ).then((r) => r.json());
+  )
+    .then((r) => r.json())
+    .catch((e) => {
+      console.log("error", e);
+    });
+  console.log("response", response);
   const post = response.payload;
+  console.log("post", post);
   const imageUrl =
     post?.filesUrl?.[0]?.thumbnail ??
     post?.filesUrl?.[0]?.uri ??
     "https://web.archive.org/web/20170305154836im_/http://cachorrosfofos.com.br/wp-content/uploads/2014/04/racas-filhotes-de-cachorros-mais-fofos-golden-retriever.jpg";
-
+  console.log("imageUrl", imageUrl);
   return {
     title: `Patitas | ${post.description}`,
     description: post.description,
