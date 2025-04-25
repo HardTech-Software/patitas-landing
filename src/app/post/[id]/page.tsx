@@ -1,18 +1,24 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import Image from "next/image";
+// import Image from "next/image";
+import type { Metadata, ResolvingMetadata } from "next";
 
-interface Props {
-  params: { id: string };
-}
+type Props = {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
-export async function generateMetadata({ params }: Props) {
-  const post = await fetch(
-    `http://localhost:4000/api/v1/post/public/${params.id}`,
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const { id } = await params;
+  await parent; // required to be able to use `parent`
+  const response = await fetch(
+    `http://localhost:4000/api/v1/post/public/${id}`,
     {
-      cache: "no-store", // o `next: { revalidate: 60 }` si quieres ISR
+      cache: "no-store",
     },
   ).then((r) => r.json());
-
+  const post = response.payload;
   const imageUrl =
     post?.filesUrl?.[0]?.thumbnail ??
     post?.filesUrl?.[0]?.uri ??
@@ -25,7 +31,7 @@ export async function generateMetadata({ params }: Props) {
       title: `Patitas | ${post.description}`,
       description: post.description,
       images: [imageUrl],
-      url: `https://patitas-app.netlify.app/posts/${post.id}`,
+      url: `https://patitas-app.netlify.app/posts/${id}`,
     },
     twitter: {
       card: "summary_large_image",
@@ -34,27 +40,41 @@ export async function generateMetadata({ params }: Props) {
     },
   };
 }
+export default function Page({ params, searchParams }: Props) {
+  console.log("params", params);
 
-export default async function PostDetailPage({ params }: Props) {
-  const response = await fetch(
-    `http://localhost:4000/api/v1/post/public/${params.id}`,
-    {
-      cache: "no-store", // o `next: { revalidate: 60 }`
-    },
-  ).then((r) => r.json());
-
-  const post = response.payload;
-  console.log(post);
-
-  const imageUrl =
-    post?.filesUrl?.[0]?.thumbnail ??
-    post?.filesUrl?.[0]?.uri ??
-    "https://www.mundoperros.es/wp-content/uploads/2018/01/cachorro-de-golden-830x593.jpg";
-
+  console.log("searchParams", searchParams);
   return (
     <div>
-      <Image src={imageUrl} alt="image-patitas" width={600} height={400} />
-      <h1>{post.description}</h1>
+      {/* <Image src={imageUrl} alt="image-patitas" width={600} height={400} /> */}
+      <h1>Post Detail</h1>
     </div>
   );
 }
+// export default async function PostDetailPage({
+//   params,
+// }: {
+//   params: { id: string };
+// }) {
+//   const response = await fetch(
+//     `http://localhost:4000/api/v1/post/public/${params.id}`,
+//     {
+//       cache: "no-store", // o `next: { revalidate: 60 }`
+//     },
+//   ).then((r) => r.json());
+
+//   const post = response.payload;
+//   console.log(post);
+
+//   const imageUrl =
+//     post?.filesUrl?.[0]?.thumbnail ??
+//     post?.filesUrl?.[0]?.uri ??
+//     "https://www.mundoperros.es/wp-content/uploads/2018/01/cachorro-de-golden-830x593.jpg";
+
+//   return (
+//     <div>
+//       <Image src={imageUrl} alt="image-patitas" width={600} height={400} />
+//       <h1>{post.description}</h1>
+//     </div>
+//   );
+// }
