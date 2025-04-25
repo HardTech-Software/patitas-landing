@@ -1,4 +1,3 @@
-import { theme } from "@/helpers/theme";
 import styled from "styled-components";
 
 export const Container = styled.button`
