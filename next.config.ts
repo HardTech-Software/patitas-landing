@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
       "web.archive.org",
       "localhost",
       "patitasbucket.s3.sa-east-1.amazonaws.com",
+      "patitas-app.netlify.app",
     ],
   },
 };
