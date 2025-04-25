@@ -11,6 +11,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const { id } = await params;
+  console.log("id", id);
   await parent; // required to be able to use `parent`
   const response = await fetch(
     `http://localhost:4000/api/v1/post/public/${id}`,
@@ -40,10 +41,7 @@ export async function generateMetadata(
     },
   };
 }
-export default function Page({ params, searchParams }: Props) {
-  console.log("params", params);
-
-  console.log("searchParams", searchParams);
+export default function Page() {
   return (
     <div>
       {/* <Image src={imageUrl} alt="image-patitas" width={600} height={400} /> */}
