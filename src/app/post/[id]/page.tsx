@@ -41,14 +41,7 @@ export async function generateMetadata(
     },
   };
 }
-export default function Page() {
-  return (
-    <div>
-      {/* <Image src={imageUrl} alt="image-patitas" width={600} height={400} /> */}
-      <h1>Post Detail</h1>
-    </div>
-  );
-}
+export default function Page() {}
 // export default async function PostDetailPage({
 //   params,
 // }: {
