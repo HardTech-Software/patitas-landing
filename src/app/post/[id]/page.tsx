@@ -13,7 +13,7 @@ export async function generateMetadata(
   console.log("id", id);
   await parent; // required to be able to use `parent`
   const response = await fetch(
-    `http://localhost:4000/api/v1/post/public/${id}`,
+    `https://3816-2803-c600-810b-b562-d5f8-3270-bc6c-fcc7.ngrok-free.app/api/v1/post/public/${id}`,
     {
       cache: "no-store",
     },
