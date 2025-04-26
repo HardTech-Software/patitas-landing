@@ -10,6 +10,8 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const api_url = process.env.NEXT_PUBLIC_API_URL ?? "";
+  console.log("api_url", api_url);
+  console.log("id", id);
 
   const response = await fetch(`${api_url}/api/v1/post/public/${id}`, {
     cache: "no-store",
