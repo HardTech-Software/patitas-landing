@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
-const api_url = process.env.API_URL ?? "";
-
+const api_url = process.env.NEXT_PUBLIC_API_URL ?? "";
+console.log("api_url", api_url);
 const nextConfig: NextConfig = {
   images: {
     domains: [

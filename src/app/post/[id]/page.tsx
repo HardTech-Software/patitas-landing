@@ -1,8 +1,10 @@
 // import Image from "next/image";
 import type { Metadata, ResolvingMetadata } from "next";
+import Details from "./details";
 
 type Props = {
   params: Promise<{ id: string }>;
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 export async function generateMetadata(
@@ -11,13 +13,13 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { id } = await params;
   console.log("id", id);
+  const api_url = process.env.NEXT_PUBLIC_API_URL ?? "";
+  console.log("api_url", api_url);
+  console.log("url", `${api_url}/api/v1/post/public/${id}`);
   await parent; // required to be able to use `parent`
-  const response = await fetch(
-    `${process.env.API_URL}/api/v1/post/public/${id}`,
-    {
-      cache: "no-store",
-    },
-  )
+  const response = await fetch(`${api_url}/api/v1/post/public/${id}`, {
+    cache: "no-store",
+  })
     .then((r) => r.json())
     .catch((e) => {
       console.log("error", e);
@@ -46,31 +48,7 @@ export async function generateMetadata(
     },
   };
 }
-export default function Page() {}
-// export default async function PostDetailPage({
-//   params,
-// }: {
-//   params: { id: string };
-// }) {
-//   const response = await fetch(
-//     `http://localhost:4000/api/v1/post/public/${params.id}`,
-//     {
-//       cache: "no-store", // o `next: { revalidate: 60 }`
-//     },
-//   ).then((r) => r.json());
-
-//   const post = response.payload;
-//   console.log(post);
-
-//   const imageUrl =
-//     post?.filesUrl?.[0]?.thumbnail ??
-//     post?.filesUrl?.[0]?.uri ??
-//     "https://www.mundoperros.es/wp-content/uploads/2018/01/cachorro-de-golden-830x593.jpg";
-
-//   return (
-//     <div>
-//       <Image src={imageUrl} alt="image-patitas" width={600} height={400} />
-//       <h1>{post.description}</h1>
-//     </div>
-//   );
-// }
+export default async function Page({ params }: Props) {
+  const { id } = await params;
+  return <Details id={id} />;
+}
