@@ -2,11 +2,11 @@ import React from "react";
 import {
   Container,
   ContainerButton,
+  ContainerInner,
   Item,
   LogoIcon,
   MenuIcon,
   Nav,
-  Overlay,
   SidebarContainer,
 } from "./styles";
 import Icon from "../icon";
@@ -30,9 +30,9 @@ const Header = () => {
   };
   return (
     <>
-      {!isSidebarOpen && (
-        <Container>
-          <LogoIcon style={{}}>
+      <Container>
+        <ContainerInner>
+          <LogoIcon>
             <Icon name="logo" />
           </LogoIcon>
           <MenuIcon onClick={OpenSidebar}>
@@ -46,20 +46,29 @@ const Header = () => {
               </Item>
             ))}
             <ContainerButton>
-              <Button />
+              <Button title="Descargar App" />
             </ContainerButton>
           </Nav>
-        </Container>
-      )}
+          <SidebarContainer $isOpen={isSidebarOpen}>
+            {isSidebarOpen && (
+              <>
+                <Sidebar
+                  onClick={CloseSidebar}
+                  scrollToSection={scrollToSection}
+                />
+              </>
+            )}
+          </SidebarContainer>
+        </ContainerInner>
+      </Container>
 
-      <SidebarContainer $isOpen={isSidebarOpen}>
+      {/* <SidebarContainer $isOpen={isSidebarOpen}>
         {isSidebarOpen && (
           <>
             <Sidebar onClick={CloseSidebar} scrollToSection={scrollToSection} />
-            <Overlay onClick={CloseSidebar} />
           </>
         )}
-      </SidebarContainer>
+      </SidebarContainer> */}
     </>
   );
 };

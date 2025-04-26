@@ -23,12 +23,12 @@ export const styles: StylesProps = {
 
   title2: {
     fontSize: "1rem",
-    fontWeight: 600,
-    color: theme.secondary,
+    fontWeight: 700,
+    color: theme.primary,
   },
 
   description: {
-    fontSize: "1rem",
+    fontSize: "14px",
     fontWeight: 400,
     color: theme.secondary,
   },

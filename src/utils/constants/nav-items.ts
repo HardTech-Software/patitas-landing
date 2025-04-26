@@ -1,9 +1,9 @@
-export const headerHeight = 80;
+export const headerHeight = 151;
 
 export const navItems = [
-  { label: "HOME", sectionId: "home-section" },
-  { label: "QUE HAY PARA TI", sectionId: "for-you-section" },
-  { label: "SUSCRíBETE Y AYUDA", sectionId: "subscribe-section" },
-  { label: "NUESTRA MOTIVACIÓN", sectionId: "mission-section" },
-  { label: "CONTACTO", sectionId: "footer-section" },
+  { label: "Home", sectionId: "home-section" },
+  { label: "Que hay para ti", sectionId: "for-you-section" },
+  { label: "Suscríbete y ayuda", sectionId: "subscribe-section" },
+  { label: "Nuestra motivación", sectionId: "mission-section" },
+  { label: "Contacto", sectionId: "footer-section" },
 ];
