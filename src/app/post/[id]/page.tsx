@@ -1,22 +1,16 @@
-// import Image from "next/image";
-import type { Metadata, ResolvingMetadata } from "next";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import type { Metadata } from "next";
 import Details from "./details";
 
 type Props = {
   params: Promise<{ id: string }>;
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
-  console.log("id", id);
   const api_url = process.env.NEXT_PUBLIC_API_URL ?? "";
-  console.log("api_url", api_url);
-  console.log("url", `${api_url}/api/v1/post/public/${id}`);
-  await parent; // required to be able to use `parent`
+
   const response = await fetch(`${api_url}/api/v1/post/public/${id}`, {
     cache: "no-store",
   })
@@ -24,14 +18,12 @@ export async function generateMetadata(
     .catch((e) => {
       console.log("error", e);
     });
-  console.log("response", response);
   const post = response.payload;
-  console.log("post", post);
   const imageUrl =
     post?.filesUrl?.[0]?.thumbnail ??
     post?.filesUrl?.[0]?.uri ??
     "https://web.archive.org/web/20170305154836im_/http://cachorrosfofos.com.br/wp-content/uploads/2014/04/racas-filhotes-de-cachorros-mais-fofos-golden-retriever.jpg";
-  console.log("imageUrl", imageUrl);
+
   return {
     title: `Patitas | ${post.description}`,
     description: post.description,
@@ -48,7 +40,7 @@ export async function generateMetadata(
     },
   };
 }
-export default async function Page({ params }: Props) {
+export default async function Page({ params, searchParams }: Props) {
   const { id } = await params;
   return <Details id={id} />;
 }
