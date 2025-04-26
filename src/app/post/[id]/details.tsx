@@ -15,9 +15,9 @@ const Details = ({ id }: { id: string }) => {
 
   const getPost = useCallback(async () => {
     if (!id) return;
-    console.log("getPost", `${api_url}/api/v1/post/public/${id}`);
+    // console.log("getPost", `${api_url}/api/v1/post/public/${id}`);
     try {
-      const response = await fetch(`${api_url}/api/v1/post/public/${id}`, {
+      const response = await fetch(`/api/post?id=${id}`, {
         cache: "no-store",
       });
       const data = await response.json();

@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       console.log("error", e);
     });
   const post = response.payload;
+  console.log("post", post);
   const imageUrl =
     post?.filesUrl?.[0]?.thumbnail ??
     post?.filesUrl?.[0]?.uri ??
