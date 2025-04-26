@@ -5,6 +5,7 @@
 // import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
+import { openMobileApp } from "@/utils/open-mobile-app";
 
 const Details = ({ id }: { id: string }) => {
   const [post, setPost] = useState<any>(null);
@@ -31,6 +32,7 @@ const Details = ({ id }: { id: string }) => {
 
   useEffect(() => {
     if (!id) return;
+    openMobileApp(id);
     getPost();
   }, [id]);
   return (
