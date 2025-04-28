@@ -3,7 +3,7 @@ import { StylesProps } from "@/utils/styles-props";
 
 export const styles: StylesProps = {
   h1: {
-    fontSize: "3rem",
+    fontSize: "2.8rem",
     fontWeight: 700,
     color: theme.secondary,
     lineHeight: 1,
@@ -28,7 +28,7 @@ export const styles: StylesProps = {
   },
 
   description: {
-    fontSize: "14px",
+    fontSize: "1rem",
     fontWeight: 400,
     color: theme.secondary,
   },

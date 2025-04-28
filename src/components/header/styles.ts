@@ -22,6 +22,11 @@ export const ContainerInner = styled.div`
   width: 100%;
   border-radius: 50px;
   position: relative;
+
+  @media (max-width: 1120px) {
+    padding: 0 1rem;
+    margin: 1.8rem 1rem;
+  }
 `;
 
 export const LogoIcon = styled.button`
@@ -70,20 +75,23 @@ export const ContainerButton = styled.div`
 `;
 
 export const SidebarContainer = styled.div<{ $isOpen: boolean }>`
+  background-color: ${theme.primary};
   position: absolute;
-  z-index: 2;
-  top: ${(props) => (props.$isOpen ? "0px" : "-550px")};
-  transition: top 0.3s ease-in-out;
+  top: 35px;
   right: 0;
   z-index: -1;
+  height: ${(props) => (props.$isOpen ? "375px" : "0px")};
+  transition: height 0.3s ease-in-out;
+  overflow: hidden;
+  border-radius: 0 0px 30px 30px;
 `;
 
 export const Overlay = styled.div`
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1;
+  z-index: -1;
 `;

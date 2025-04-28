@@ -13,7 +13,7 @@ export const Container = styled.div`
 `;
 
 export const ContainerLeft = styled.div`
-  max-width: 600px;
+  max-width: 360px;
   width: 100%;
 `;
 

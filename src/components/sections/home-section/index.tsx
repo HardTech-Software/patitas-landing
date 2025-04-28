@@ -19,7 +19,10 @@ const HomeSection = ({ id }: HomeSectionProps) => {
     <Container id={id}>
       <ContainerLeft>
         <ContainerTop>
-          <Typography variant="h1">Un espacio para ti y tu mascota </Typography>
+          <Typography variant="h1">
+            Un espacio{" "}
+            <span style={{ color: "#F45954" }}>para ti y tu mascota</span>
+          </Typography>
           <Typography>
             Con Patitas tu y tu mascota
             <b> tendrán la libertad de ser ustedes mismos. </b> Comparte
@@ -28,7 +31,7 @@ const HomeSection = ({ id }: HomeSectionProps) => {
           </Typography>
         </ContainerTop>
         <ContainerBottom>
-          <Typography variant="title1">Descargala en</Typography>
+          <Typography variant="title2">Descargala en</Typography>
           <ButtonContainer>
             <IconButton src="app-store" />
             <IconButton src="google-play" />

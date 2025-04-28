@@ -3,14 +3,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 180px;
-  background-color: ${theme.primary};
-  padding: 60px 10px;
-  border-radius: 0 50px 30px 30px;
+  padding: 0px 10px;
   box-shadow: 0 0 20px rgba(244, 89, 84, 0.5);
+  height: 100%;
 `;
 
 export const Nav = styled.nav`
-  margin-top: 30px;
+  margin-top: 60px;
 `;
 
 export const Item = styled.div`
@@ -24,5 +23,5 @@ export const ContainerButton = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 25px;
 `;
