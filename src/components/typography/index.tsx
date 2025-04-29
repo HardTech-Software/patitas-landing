@@ -7,7 +7,7 @@ interface TypographyProps extends React.HTMLAttributes<HTMLParagraphElement> {
 }
 
 const Typography = ({
-  variant = "description",
+  variant = "description1",
   style,
   color,
   ...props

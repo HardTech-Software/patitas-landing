@@ -80,10 +80,11 @@ export const SidebarContainer = styled.div<{ $isOpen: boolean }>`
   top: 35px;
   right: 0;
   z-index: -1;
-  height: ${(props) => (props.$isOpen ? "375px" : "0px")};
+  height: ${(props) => (props.$isOpen ? "310px" : "0px")};
   transition: height 0.3s ease-in-out;
   overflow: hidden;
   border-radius: 0 0px 30px 30px;
+  box-shadow: -7px 4px 20px rgba(244, 89, 84, 0.5);
 `;
 
 export const Overlay = styled.div`

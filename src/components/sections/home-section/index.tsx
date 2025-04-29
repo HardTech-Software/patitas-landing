@@ -20,7 +20,7 @@ const HomeSection = ({ id }: HomeSectionProps) => {
       <ContainerLeft>
         <ContainerTop>
           <Typography variant="h1">
-            Un espacio{" "}
+            Un espacio {""}
             <span style={{ color: "#F45954" }}>para ti y tu mascota</span>
           </Typography>
           <Typography>

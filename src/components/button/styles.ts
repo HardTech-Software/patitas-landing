@@ -1,5 +1,6 @@
 import { theme } from "@/helpers/theme";
 import styled from "styled-components";
+import Typography from "../typography";
 interface ButtonProps {
   $variant?: "primary" | "secondary";
 }
@@ -17,6 +18,6 @@ export const Container = styled.button<ButtonProps>`
 
   &:hover {
     background-color: ${({ $variant }) =>
-      $variant === "primary" ? "#ce4b47" : "none"};
+      $variant === "primary" ? "#ce4b47" : "#ce4b47"};
   }
 `;

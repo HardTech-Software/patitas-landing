@@ -25,7 +25,7 @@ const Footer = ({ id }: FooterProps) => {
         </ImageContainer>
         <ContainerRight>
           <ContainerTop>
-            <Typography variant="description2">
+            <Typography variant="description1">
               ¿Tienes dudas, sugerencias o necesitas ayuda?
             </Typography>
             <Typography>

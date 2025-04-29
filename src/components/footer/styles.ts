@@ -2,6 +2,23 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   padding: 60px clamp(2rem, 12vw, 10rem);
+
+  background-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 1) 35%,
+      rgba(255, 255, 255, 1) 65%,
+      transparent 100%
+    ),
+    url("/background1.svg");
+  background-repeat: repeat-y;
+  background-size: 1920px auto;
+  background-position: top center;
+
+  @media (max-width: 748px) {
+    background-image: url("/background2.svg");
+    background-size: 748px auto;
+  }
 `;
 
 export const ContainerInner = styled.div`

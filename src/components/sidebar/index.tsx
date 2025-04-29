@@ -21,7 +21,7 @@ const Sidebar = ({ onClick, scrollToSection }: SidebarProps) => {
               scrollToSection(item.sectionId);
             }}
           >
-            <Typography variant="description" color="white">
+            <Typography variant="title4" color="white">
               {item.label}
             </Typography>
           </Item>
