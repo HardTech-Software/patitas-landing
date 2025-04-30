@@ -6,10 +6,10 @@ import {
   ContainerLeft,
   ContainerRight,
   ContainerTop,
-  CustomImage,
 } from "./styles";
 import Typography from "@/components/typography";
 import IconButton from "@/components/icon-button";
+import Icon from "@/components/icon";
 
 interface HomeSectionProps {
   id: string;
@@ -39,7 +39,7 @@ const HomeSection = ({ id }: HomeSectionProps) => {
         </ContainerBottom>
       </ContainerLeft>
       <ContainerRight>
-        <CustomImage src="/image-home.svg" width={390} height={370} alt="" />
+        <Icon name="home-image" width="100%" height="100%" />
       </ContainerRight>
     </Container>
   );

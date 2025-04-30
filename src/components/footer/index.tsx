@@ -25,10 +25,8 @@ const Footer = ({ id }: FooterProps) => {
         </ImageContainer>
         <ContainerRight>
           <ContainerTop>
-            <Typography variant="description1">
-              ¿Tienes dudas, sugerencias o necesitas ayuda?
-            </Typography>
             <Typography>
+              <b> ¿Tienes dudas, sugerencias o necesitas ayuda? </b>
               Estamos aquí para escucharte. Contáctanos y con gusto te
               ayudaremos a que tu experiencia en la app sea la mejor posible.
             </Typography>

@@ -24,14 +24,6 @@ export const ContainerLeft = styled.div`
   }
 `;
 
-export const CustomImage = styled(Image)`
-  max-height: 370;
-
-  @media (max-width: 550px) {
-    width: 100%;
-    height: 100%;
-  }
-`;
 export const ContainerTop = styled.div`
   margin-bottom: 30px;
   display: flex;
@@ -47,6 +39,9 @@ export const ButtonContainer = styled.div`
 `;
 
 export const ContainerRight = styled.div`
+  max-width: 370px;
+  width: 100%;
+
   @media (max-width: 800px) {
     order: 1;
   }

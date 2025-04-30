@@ -13,11 +13,19 @@ export const Container = styled.button<ButtonProps>`
     $variant === "primary" ? theme.primary : theme.white};
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-
   transition: background-color 0.3s ease;
 
+  .button-text {
+    color: ${({ $variant }) =>
+      $variant === "primary" ? theme.white : theme.primary};
+    transition: color 0.3s ease;
+  }
+
   &:hover {
-    background-color: ${({ $variant }) =>
-      $variant === "primary" ? "#ce4b47" : "#ce4b47"};
+    background-color: #ce4b47;
+
+    .button-text {
+      color: ${theme.white};
+    }
   }
 `;

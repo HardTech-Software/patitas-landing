@@ -3,7 +3,7 @@ import { styles, Variant } from "./styles";
 
 interface TypographyProps extends React.HTMLAttributes<HTMLParagraphElement> {
   variant?: Variant;
-  color?: keyof typeof theme;
+  color?: keyof typeof theme | "inherit";
 }
 
 const Typography = ({
@@ -14,7 +14,13 @@ const Typography = ({
 }: TypographyProps) => {
   const rootStyles = {
     ...styles[variant],
-    color: color ? theme[color] : styles[variant].color,
+    color:
+      color === "inherit"
+        ? "inherit"
+        : color
+        ? theme[color]
+        : styles[variant].color,
+
     ...style,
   };
 
