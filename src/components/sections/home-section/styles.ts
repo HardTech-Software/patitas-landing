@@ -8,7 +8,7 @@ export const Container = styled.div`
   gap: 50px;
   background-image: linear-gradient(#fef7f7 80%, transparent 100%);
 
-  padding: 9.5rem clamp(1rem, 12vw, 1rem);
+  padding: 10.5rem clamp(1rem, 12vw, 1rem);
 
   @media (max-width: 800px) {
     flex-direction: column;

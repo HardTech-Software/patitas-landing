@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 60px clamp(2rem, 12vw, 10rem);
+  padding: 5rem clamp(2rem, 12vw, 1rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 
   background-image: linear-gradient(
       to right,
@@ -23,9 +27,9 @@ export const Container = styled.div`
 
 export const ContainerInner = styled.div`
   display: flex;
-  margin-top: 40px;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  gap: 10px;
   @media (max-width: 720px) {
     flex-direction: column;
   }
@@ -36,6 +40,7 @@ export const ContainerRight = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 340px;
 `;
 
 export const ContainerTop = styled.div``;

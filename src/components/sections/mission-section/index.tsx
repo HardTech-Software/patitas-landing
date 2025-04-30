@@ -1,8 +1,12 @@
 import React from "react";
-import { Container, TextContainer } from "./styles";
+import {
+  ClosingQuotes,
+  Container,
+  OpeningQuotes,
+  TextContainer,
+} from "./styles";
 import Typography from "@/components/typography";
 import Title from "@/components/title";
-
 interface MissionSectionProps {
   id: string;
 }
@@ -19,6 +23,18 @@ const MissionSection = ({ id }: MissionSectionProps) => {
           familias cuando se pierden.
         </Typography>
         <Typography color="primary">-Hardtech</Typography>
+        <OpeningQuotes
+          src="/opening-quotes.svg"
+          width={120}
+          height={120}
+          alt=""
+        />
+        <ClosingQuotes
+          src="/closing-quotes.svg"
+          width={120}
+          height={120}
+          alt=""
+        />
       </TextContainer>
     </Container>
   );
