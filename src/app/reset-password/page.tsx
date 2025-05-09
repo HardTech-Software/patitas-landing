@@ -13,9 +13,11 @@ const ResetPassword = () => {
   console.log("searchParams", token);
 
   useEffect(() => {
-    if (token) {
-      openMobileApp({ key: "reset-password", value: token });
-    }
+    if (!token) return;
+    openMobileApp({ key: "reset-password", value: token });
+  }, [token]);
+
+  useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
