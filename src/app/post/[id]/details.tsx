@@ -32,7 +32,7 @@ const Details = ({ id }: { id: string }) => {
 
   useEffect(() => {
     if (!id) return;
-    openMobileApp(id);
+    openMobileApp({ key: "posts", value: id });
     getPost();
   }, [id]);
   return (
