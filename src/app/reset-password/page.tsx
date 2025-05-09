@@ -4,7 +4,11 @@ import { openMobileApp } from "@/utils/open-mobile-app";
 import React, { useEffect, useState } from "react";
 
 const ResetPassword = () => {
-  const token = new URLSearchParams(window.location.search).get("token");
+  let token: string | null = null;
+  if (typeof window !== "undefined") {
+    token = new URLSearchParams(window.location.search).get("token");
+  }
+
   const [isLoading, setIsLoading] = useState(true);
   console.log("searchParams", token);
 
