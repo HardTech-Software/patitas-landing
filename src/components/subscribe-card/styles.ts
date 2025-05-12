@@ -36,6 +36,7 @@ export const TitleContainer = styled.div<TitleContainerProps>`
   justify-content: center;
   align-items: center;
   border-radius: 50px;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
 `;
 
 export const TextContainer = styled.div`
