@@ -1,6 +1,12 @@
 import { IconProps } from "@/utils/icon-props";
 import React from "react";
-import { AppStoreIcon, GooglePlayIcon, LogoIcon, MenuIcon } from "../icons";
+import {
+  AppStoreIcon,
+  GooglePlayIcon,
+  LogoFooterIcon,
+  LogoIcon,
+  MenuIcon,
+} from "../icons";
 import HomeImage from "../icons/home-image";
 
 const icons = (props?: IconProps) => ({
@@ -9,6 +15,7 @@ const icons = (props?: IconProps) => ({
   "app-store": <AppStoreIcon {...props} />,
   "google-play": <GooglePlayIcon {...props} />,
   "home-image": <HomeImage {...props} />,
+  "logo-footer": <LogoFooterIcon {...props} />,
 });
 
 export type IconName = keyof ReturnType<typeof icons>;

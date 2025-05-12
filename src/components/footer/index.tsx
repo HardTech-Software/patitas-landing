@@ -1,16 +1,20 @@
 import React from "react";
 import {
   Container,
-  ContainerBottom,
   ContainerCenter,
+  ContainerCenterInner,
   ContainerInner,
+  ContainerLeft,
   ContainerRight,
-  ContainerTop,
-  ImageContainer,
+  ContainerRightInner,
+  Email,
+  LogoIcon,
 } from "./styles";
-import Title from "../title";
-import Image from "next/image";
+import Icon from "../icon";
 import Typography from "../typography";
+import Image from "next/image";
+import { Constants } from "@/utils/constants/constants";
+import { scrollToSection } from "@/utils/constants/nav-items";
 
 interface FooterProps {
   id: string;
@@ -18,29 +22,32 @@ interface FooterProps {
 const Footer = ({ id }: FooterProps) => {
   return (
     <Container id={id}>
-      <Title title="Contacto" />
+      <LogoIcon onClick={() => scrollToSection("home-section")}>
+        <Icon name="logo-footer" />
+      </LogoIcon>
+
       <ContainerInner>
-        <ImageContainer>
-          <Image src="/image-footer.svg" width={290} height={240} alt="" />
-        </ImageContainer>
+        <ContainerLeft>
+          <Typography variant="description2">Contacto</Typography>
+          <Email href={`mailto:${Constants.email}`}>
+            <Typography>{Constants.email}</Typography>
+          </Email>
+        </ContainerLeft>
+        <ContainerCenter>
+          <Image src="/logo-instagram.svg" width={42} height={42} alt="" />
+          <ContainerCenterInner>
+            <Typography variant="description2">Siguenos</Typography>
+            <Typography>{Constants.instagram}</Typography>
+          </ContainerCenterInner>
+        </ContainerCenter>
         <ContainerRight>
-          <ContainerTop>
+          <Image src="/logo-hardtech.svg" width={43} height={47} alt="" />
+          <ContainerRightInner>
+            <Typography>developed</Typography>
             <Typography>
-              <b> ¿Tienes dudas, sugerencias o necesitas ayuda? </b>
-              Estamos aquí para escucharte. Contáctanos y con gusto te
-              ayudaremos a que tu experiencia en la app sea la mejor posible.
+              by <span style={{ color: "#D92121" }}>hardtech</span>
             </Typography>
-          </ContainerTop>
-
-          <ContainerCenter>
-            <Typography variant="title1">Correo</Typography>
-            <Typography>hardtech@correo.com</Typography>
-          </ContainerCenter>
-
-          <ContainerBottom>
-            <Image src="/logo-instagram.svg" width={39} height={39} alt="" />
-            <Typography>@patitas.app</Typography>
-          </ContainerBottom>
+          </ContainerRightInner>
         </ContainerRight>
       </ContainerInner>
     </Container>

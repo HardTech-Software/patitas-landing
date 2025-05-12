@@ -3,7 +3,6 @@ import { Container, ContainerButton, Item, Nav } from "./styles";
 import { navItems } from "@/utils/constants/nav-items";
 import Typography from "../typography";
 import Button from "../button";
-import useToggle from "@/hooks/use-toggle";
 
 interface SidebarProps {
   onClick: () => void;

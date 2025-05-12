@@ -4,6 +4,7 @@ import {
   InfoSection,
   SubscribeSection,
   MissionSection,
+  ContactSection,
 } from "@/components";
 import React from "react";
 
@@ -14,6 +15,7 @@ const Home = () => {
       <InfoSection id="info-section" />
       <SubscribeSection id="subscribe-section" />
       <MissionSection id="mission-section" />
+      <ContactSection id="contact-section" />
     </>
   );
 };

@@ -7,17 +7,17 @@ export const ContentContainer = styled.div`
   background-image: linear-gradient(
       to right,
       transparent 0%,
-      rgba(255, 255, 255, 1) 35%,
-      rgba(255, 255, 255, 1) 65%,
+      rgba(254, 246, 246, 1) 35%,
+      rgba(254, 246, 246, 1) 65%,
       transparent 100%
     ),
-    url("/background1.svg");
+    url("/background-1.svg");
   background-repeat: repeat-y;
   background-size: 1920px auto;
   background-position: top center;
 
   @media (max-width: 748px) {
-    background-image: url("/background2.svg");
+    background-image: url("/background-2.svg");
     background-size: 748px auto;
   }
 `;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 
 export const Container = styled.div`
-  padding: 0 clamp(1rem, 12vw, 1rem) 5rem;
+  padding: 5rem clamp(1rem, 12vw, 1rem) 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -7,43 +7,49 @@ export const styles: StylesProps = {
     fontWeight: 700,
     color: theme.secondary,
     lineHeight: 1,
-  }, //texto home
+  },
 
   h2: {
     fontSize: 30,
     fontWeight: 600,
     color: theme.primary,
-  }, //titulos secciones
+  },
 
   title1: {
     fontSize: 20,
     fontWeight: 700,
     color: theme.primary,
-  }, //titulo cards for you y correo footer
+  },
 
   title2: {
     fontSize: 16,
     fontWeight: 700,
     color: theme.primary,
-  }, //item header y descargala en
+  },
 
   title3: {
     fontSize: 25,
     fontWeight: 700,
     color: theme.primary,
-  }, //precios card, cambian color
+  },
 
   title4: {
     fontSize: 14,
     fontWeight: 400,
     color: theme.white,
-  }, //item sidebar
+  },
 
   description1: {
     fontSize: 14,
     fontWeight: 400,
     color: theme.secondary,
-  }, //descripcion home
+  },
+
+  description2: {
+    fontSize: 18,
+    fontWeight: 400,
+    color: theme.secondary,
+  },
 };
 
 export type Variant =
@@ -53,4 +59,5 @@ export type Variant =
   | "title2"
   | "title3"
   | "title4"
-  | "description1";
+  | "description1"
+  | "description2";

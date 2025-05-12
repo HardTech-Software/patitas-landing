@@ -42,7 +42,7 @@ export const MenuIcon = styled.button`
   border: none;
   cursor: pointer;
 
-  @media (min-width: 1120px) {
+  @media (min-width: 1180px) {
     display: none;
   }
 `;
@@ -51,7 +51,7 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
 
-  @media (max-width: 1120px) {
+  @media (max-width: 1180px) {
     display: none;
   }
 `;
@@ -80,7 +80,7 @@ export const SidebarContainer = styled.div<{ $isOpen: boolean }>`
   top: 35px;
   right: 0;
   z-index: -1;
-  height: ${(props) => (props.$isOpen ? "310px" : "0px")};
+  height: ${(props) => (props.$isOpen ? "345px" : "0px")};
   transition: height 0.3s ease-in-out;
   overflow: hidden;
   border-radius: 0 0px 30px 30px;

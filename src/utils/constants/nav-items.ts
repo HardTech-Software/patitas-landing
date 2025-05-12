@@ -5,7 +5,8 @@ export const navItems = [
   { label: "Que hay para ti", sectionId: "info-section" },
   { label: "Suscríbete y ayuda", sectionId: "subscribe-section" },
   { label: "Nuestra motivación", sectionId: "mission-section" },
-  { label: "Contacto", sectionId: "footer-section" },
+  { label: "Contacto", sectionId: "contact-section" },
+  { label: "Footer", sectionId: "footer-section" },
 ];
 
 export const scrollToSection = (sectionId: string) => {

@@ -1,6 +1,6 @@
 import { theme } from "@/helpers/theme";
 import styled from "styled-components";
-import Typography from "../typography";
+
 interface ButtonProps {
   $variant?: "primary" | "secondary";
 }
