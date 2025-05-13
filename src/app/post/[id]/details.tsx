@@ -16,7 +16,6 @@ const Details = ({ id }: { id: string }) => {
 
   const getPost = useCallback(async () => {
     if (!id) return;
-    // console.log("getPost", `${api_url}/api/v1/post/public/${id}`);
     try {
       const response = await fetch(`/api/post?id=${id}`, {
         cache: "no-store",
@@ -55,5 +54,3 @@ const Details = ({ id }: { id: string }) => {
 };
 
 export default Details;
-//https://12e7-2803-c600-810b-b562-75fb-a008-829-e563.ngrok-free.app/api/v1/post/public/67356e4bae9e3559c4c5dcfe
-//https://12e7-2803-c600-810b-b562-75fb-a008-829-e563.ngrok-free.app/api/v1/post/public/67356e4bae9e3559c4c5dcfe
