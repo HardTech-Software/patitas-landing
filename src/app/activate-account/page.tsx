@@ -30,8 +30,8 @@ const ActivateAccount = () => {
       });
       const data = await response.json();
       console.log("data", data);
-      const _post = data?.payload;
-      if (_post?.status === "success") {
+      const statusCode = data?.statusCode;
+      if (statusCode === 201) {
         setIsActivated(true);
       }
     } catch (error) {
@@ -46,7 +46,7 @@ const ActivateAccount = () => {
     activateAccount();
   }, [token]);
   return (
-    <div>
+    <div style={{ marginTop: "300px", textAlign: "center" }}>
       <h1>Activation account</h1>
       {isLoading ? (
         <h2>Loading...</h2>
