@@ -1,9 +1,21 @@
-export const headerHeight = 80;
+export const headerHeight = 151;
 
 export const navItems = [
-  { label: "HOME", sectionId: "home-section" },
-  { label: "QUE HAY PARA TI", sectionId: "for-you-section" },
-  { label: "SUSCRíBETE Y AYUDA", sectionId: "subscribe-section" },
-  { label: "NUESTRA MOTIVACIÓN", sectionId: "mission-section" },
-  { label: "CONTACTO", sectionId: "footer-section" },
+  { label: "Home", sectionId: "home-section" },
+  { label: "Que hay para ti", sectionId: "info-section" },
+  { label: "Suscríbete y ayuda", sectionId: "subscribe-section" },
+  { label: "Nuestra motivación", sectionId: "mission-section" },
+  { label: "Contacto", sectionId: "contact-section" },
+  { label: "Footer", sectionId: "footer-section" },
 ];
+
+export const scrollToSection = (sectionId: string) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    const offsetTop = section.offsetTop - headerHeight;
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
+  }
+};

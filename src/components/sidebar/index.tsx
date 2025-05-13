@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, ContainerButton, Item, LogoIcon, Nav } from "./styles";
-import Icon from "../icon";
+import { Container, ContainerButton, Item, Nav } from "./styles";
 import { navItems } from "@/utils/constants/nav-items";
 import Typography from "../typography";
 import Button from "../button";
@@ -12,10 +11,6 @@ interface SidebarProps {
 const Sidebar = ({ onClick, scrollToSection }: SidebarProps) => {
   return (
     <Container>
-      <LogoIcon>
-        <Icon name="logo" />
-      </LogoIcon>
-
       <Nav>
         {navItems.map((item, index) => (
           <Item
@@ -25,11 +20,13 @@ const Sidebar = ({ onClick, scrollToSection }: SidebarProps) => {
               scrollToSection(item.sectionId);
             }}
           >
-            <Typography variant="title2">{item.label}</Typography>
+            <Typography variant="title4" color="white">
+              {item.label}
+            </Typography>
           </Item>
         ))}
         <ContainerButton>
-          <Button />
+          <Button title="Descargar App" variant="secondary" />
         </ContainerButton>
       </Nav>
     </Container>

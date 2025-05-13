@@ -4,12 +4,18 @@ import Typography from "../typography";
 
 interface TitleProps {
   title: string;
+  variant?: "primary" | "secondary";
 }
 
-const Title = ({ title }: TitleProps) => {
+const Title = ({ title, variant = "primary" }: TitleProps) => {
   return (
-    <Container>
-      <Typography variant="h2">{title}</Typography>
+    <Container $variant={variant}>
+      <Typography
+        variant="h2"
+        color={variant === "primary" ? "primary" : "white"}
+      >
+        {title}
+      </Typography>
     </Container>
   );
 };

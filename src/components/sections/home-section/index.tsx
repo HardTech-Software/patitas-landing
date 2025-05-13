@@ -6,10 +6,10 @@ import {
   ContainerLeft,
   ContainerRight,
   ContainerTop,
-  CustomImage,
 } from "./styles";
 import Typography from "@/components/typography";
 import IconButton from "@/components/icon-button";
+import Icon from "@/components/icon";
 
 interface HomeSectionProps {
   id: string;
@@ -19,7 +19,10 @@ const HomeSection = ({ id }: HomeSectionProps) => {
     <Container id={id}>
       <ContainerLeft>
         <ContainerTop>
-          <Typography variant="h1">Un espacio para ti y tu mascota </Typography>
+          <Typography variant="h1">
+            Un espacio {""}
+            <span style={{ color: "#F45954" }}>para ti y tu mascota</span>
+          </Typography>
           <Typography>
             Con Patitas tu y tu mascota
             <b> tendrán la libertad de ser ustedes mismos. </b> Comparte
@@ -28,7 +31,7 @@ const HomeSection = ({ id }: HomeSectionProps) => {
           </Typography>
         </ContainerTop>
         <ContainerBottom>
-          <Typography variant="title1">Descargala en</Typography>
+          <Typography variant="title2">Descargala en</Typography>
           <ButtonContainer>
             <IconButton src="app-store" />
             <IconButton src="google-play" />
@@ -36,7 +39,7 @@ const HomeSection = ({ id }: HomeSectionProps) => {
         </ContainerBottom>
       </ContainerLeft>
       <ContainerRight>
-        <CustomImage src="/image-home.svg" width={390} height={370} alt="" />
+        <Icon name="home-image" width="100%" height="100%" />
       </ContainerRight>
     </Container>
   );
