@@ -2,12 +2,11 @@
 import { openMobileApp } from "@/utils/open-mobile-app";
 import { useEffect } from "react";
 
-type Props = {
-  params: { username: string };
-};
-
-export default function Page({ params }: Props) {
-  const { username } = params;
+const Profile = () => {
+  let username: string | null = null;
+  if (typeof window !== "undefined") {
+    username = new URLSearchParams(window.location.search).get("username");
+  }
 
   console.log("username", username);
   useEffect(() => {
@@ -23,4 +22,6 @@ export default function Page({ params }: Props) {
       </p>
     </div>
   );
-}
+};
+
+export default Profile;

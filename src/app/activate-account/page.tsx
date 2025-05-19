@@ -10,10 +10,8 @@ const ActivateAccount = () => {
   }
   const [isLoading, setIsLoading] = useState(true);
   const [isActivated, setIsActivated] = useState(false);
-  console.log("token", token);
 
   const api_url = process.env.NEXT_PUBLIC_API_URL ?? "";
-  console.log("api_url", api_url);
 
   const activateAccount = useCallback(async () => {
     if (!token) return;
@@ -29,7 +27,7 @@ const ActivateAccount = () => {
         }),
       });
       const data = await response.json();
-      console.log("data", data);
+
       const statusCode = data?.statusCode;
       if (statusCode === 201) {
         setIsActivated(true);
