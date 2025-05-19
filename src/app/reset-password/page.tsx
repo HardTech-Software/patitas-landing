@@ -1,5 +1,4 @@
 "use client";
-/* eslint-disable react-hooks/exhaustive-deps */
 import { openMobileApp } from "@/utils/open-mobile-app";
 import React, { useEffect, useState } from "react";
 
@@ -10,7 +9,6 @@ const ResetPassword = () => {
   }
 
   const [isLoading, setIsLoading] = useState(true);
-  console.log("searchParams", token);
 
   useEffect(() => {
     if (!token) return;
@@ -22,6 +20,7 @@ const ResetPassword = () => {
       setIsLoading(false);
     }, 2000);
   }, []);
+
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center h-screen">

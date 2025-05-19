@@ -1,18 +1,14 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
-// import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { openMobileApp } from "@/utils/open-mobile-app";
 
 const Details = ({ id }: { id: string }) => {
   const [post, setPost] = useState<any>(null);
-  console.log("id", id);
 
   const api_url = process.env.NEXT_PUBLIC_API_URL ?? "";
-  console.log("api_url", api_url);
 
   const getPost = useCallback(async () => {
     if (!id) return;
@@ -21,7 +17,6 @@ const Details = ({ id }: { id: string }) => {
         cache: "no-store",
       });
       const data = await response.json();
-      console.log("data", data);
       const _post = data?.payload;
       setPost(_post);
     } catch (error) {

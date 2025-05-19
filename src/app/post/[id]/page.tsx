@@ -10,8 +10,6 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const api_url = process.env.NEXT_PUBLIC_API_URL ?? "";
-  console.log("api_url", api_url);
-  console.log("id", id);
 
   const response = await fetch(`${api_url}/api/v1/post/public/${id}`, {
     cache: "no-store",
@@ -21,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       console.log("error", e);
     });
   const post = response.payload;
-  console.log("post", post);
+
   const imageUrl =
     post?.filesUrl?.[0]?.thumbnail ??
     post?.filesUrl?.[0]?.uri ??
