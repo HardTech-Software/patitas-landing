@@ -16,7 +16,7 @@ const Profile = () => {
     if (!username) return;
     openMobileApp({
       key: "profile",
-      value: `${username}${petId ?? `?petId=${petId}`}`,
+      value: `${username}${petId ? `?petId=${petId}` : ""}`,
     });
   }, [username, petId]);
 
@@ -25,7 +25,11 @@ const Profile = () => {
       <h1>Abriendo la app...</h1>
       <p>
         Si no se abre,
-        <a href={`patitas://profile/${username}${petId ?? `?petId=${petId}`}`}>
+        <a
+          href={`patitas://profile/${username}${
+            petId ? `?petId=${petId}` : ""
+          }`}
+        >
           haz clic aquí
         </a>
         .
